@@ -1,3 +1,4 @@
+//old 
 class Solution {
     public int missingNumber(int[] nums) {
         int s=0;
@@ -7,5 +8,19 @@ class Solution {
             s += nums[i];
         }
         return t-s;
+    }
+}
+
+// New
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        int sum = 0,n = nums.length;
+        for(int i=0; i<n; i++){
+            sum=sum+nums[i];
+        }
+        int realsum = n*(n+1)/2;
+        int mnum = realsum-sum;
+        return mnum;
     }
 }
